@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi"
 import { colors, breakingPoints } from "./Styles"
 import { useStore } from "./Layout"
+import Image from 'next/image'
 
 const nav = [
   {
@@ -68,11 +69,9 @@ export default function Nav() {
           },
         }}>
         <Link href="/">
-          <img
-            onClick={() => toggleNav(false)}
-            src="https://i.imgur.com/gMVZphm.png"
-            css={{ width: 200, margin: "50px 20px ", cursor: "pointer" }}
-          />
+          <div style={{ margin: '50px 20px' }}>
+            <Image className="avatar" src={'/static/logo.png'} width={200} height={41.75} />
+          </div>
         </Link>
         <div
           css={{

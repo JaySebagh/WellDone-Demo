@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document"
 
 export default class extends Document {
   static async getInitialProps(ctx) {
@@ -8,14 +8,10 @@ export default class extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1.0"
-          />
           <link rel="stylesheet" href="/static/normalize.css" />
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
@@ -27,7 +23,7 @@ export default class extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

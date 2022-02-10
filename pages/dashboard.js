@@ -112,6 +112,6 @@ export default function Dashboard({ pumps }) {
 }
 
 Dashboard.getInitialProps = async () => {
-  const { pumps } = require("../assets/cache/pumps.json")
+  const { pumps } = require("../components/pumps.json")
   return { pumps }
 }

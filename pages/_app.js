@@ -1,11 +1,12 @@
 import React from "react"
-import App, { Container } from "next/app"
+import App from "next/app"
 import Styles, { breakingPoints } from "../components/Styles"
 import NProgress from "nprogress"
 import Router from "next/router"
 import Nav from "../components/Nav"
 import Layout from "../components/Layout"
 import TopNav from "../components/TopNav"
+import Head from 'next/head'
 
 Router.events.on("routeChangeStart", () => NProgress.start())
 Router.events.on("routeChangeComplete", () => NProgress.done())
@@ -24,23 +25,32 @@ export default class extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <Container>
-        <Layout>
-          <Nav />
-          <div
-            css={{
-              marginLeft: 240,
-              width: "100%",
-              [breakingPoints.md]: {
-                marginLeft: 0,
-              },
-            }}>
-            <TopNav />
-            <Component {...pageProps} />
-          </div>
-        </Layout>
-        <Styles />
-      </Container>
+      <>
+        <Head>
+          <meta
+              name="viewport"
+              content="width=device-width,initial-scale=1.0"
+          />
+        </Head>
+        {/* <Container> */}
+        {/* CONTAINER HAS BEEN DEPRECATED */}
+          <Layout>
+            <Nav />
+            <div
+              css={{
+                marginLeft: 240,
+                width: "100%",
+                [breakingPoints.md]: {
+                  marginLeft: 0,
+                },
+              }}>
+              <TopNav />
+              <Component {...pageProps} />
+            </div>
+          </Layout>
+          <Styles />
+        {/* </Container> */}
+      </>
     )
   }
 }

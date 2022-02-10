@@ -17,29 +17,6 @@ export default function TopNav() {
         alignItems: "center",
         position: "relative",
       }}>
-      {/* <input
-      placeholder="Search"
-      css={{
-        backgroundColor: "white",
-        border: "none",
-        outline: "none",
-        borderRadius: 5,
-        padding: "5px 10px",
-      }}
-    /> */}
-      {/* <div
-      css={{
-        height: 40,
-        width: 40,
-        backgroundColor: "#ABD5FF",
-        borderRadius: "50%",
-        margin: "0 10px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
-      <FiUser size="20px" color="white" />
-    </div> */}
       <div>
         <button
           css={{

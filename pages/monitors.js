@@ -156,7 +156,7 @@ export default function Monitors({ pumps }) {
 }
 
 Monitors.getInitialProps = async () => {
-  const { pumps } = require("../assets/cache/pumps.json")
+  const { pumps } = require("../components/pumps.json")
 
   return { pumps }
 }
