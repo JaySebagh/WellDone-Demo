@@ -33,7 +33,7 @@ export default function MonitorCard({ pump, error }) {
       })
     }
   })
-  console.log(pump)
+  // console.log(pump)
   return (
     <div
       css={{

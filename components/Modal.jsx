@@ -26,8 +26,8 @@ export default function Modal({ pumps, modalId }) {
   const selectedPump = modalId ? pumps.find(pump => pump.id === modalId) : 1;
   const pumpToArr = modalId && selectedPump.statuses ? Object.keys(selectedPump.statuses).map(i => selectedPump.statuses[i]) : null;
 
-  console.log("an array?", pumpToArr);
-  console.log("help:", selectedPump.status);
+  // console.log("an array?", pumpToArr);
+  // console.log("help:", selectedPump.status);
   return (
     <div>
       {(modalId && pumpToArr && pumpToArr != undefined && pumpToArr.length != 0) ? (
@@ -35,26 +35,18 @@ export default function Modal({ pumps, modalId }) {
           <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
           <p>Current: {styles[selectedPump.status].icon}</p>
           <p>3-Day Spread:</p>
-            <p>{styles[pumpToArr[12].status].icon} {pumpToArr[12].date}</p>
-            <p>{styles[pumpToArr[11].status].icon} {pumpToArr[11].date}</p>
-            <p>{styles[pumpToArr[10].status].icon} {pumpToArr[10].date}</p>
+            <p>{styles[pumpToArr[pumpToArr.length - 1].status].icon} {pumpToArr[pumpToArr.length - 1].date}</p>
+            <p>{styles[pumpToArr[pumpToArr.length - 2].status].icon} {pumpToArr[pumpToArr.length - 2].date}</p>
+            <p>{styles[pumpToArr[pumpToArr.length - 3].status].icon} {pumpToArr[pumpToArr.length - 3].date}</p>
         </div>
       ) 
-      // : selectedPump.status === 0 ? (
-      //   <div>
-      //     <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
-      //     <p>Current: {styles[selectedPump.status].icon}</p></div>
-      // ) 
-      : selectedPump.status === 1 ? (
+      : selectedPump.status === 0 ? (
         <div>
           <h3 css={{color:styles[selectedPump.status].color }}>Pump #{selectedPump.id}</h3>
-          <p>Current: {styles[selectedPump.status].icon}</p>
-          <p>3-Day Spread:</p>
-            <p>{styles[0].icon} unavailable</p>
-            <p>{styles[0].icon} unavailable</p>
-            <p>{styles[0].icon} unavailable</p>
-        </div>
-      ) : (<h3>Select a Pump</h3>)
+          <p>Current: NO DATA</p></div>
+      ) 
+      
+      : (<h3>Select a Pump</h3>)
       }
     </div>
   )
