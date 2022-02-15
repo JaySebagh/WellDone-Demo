@@ -1,6 +1,6 @@
 # Well-Done 
 
-You can find the deployed project at [Well-Done](https://frontend-git-master.welldone.now.sh/).
+You can find the deployed project at [Well-Done](https://well-done-demo.vercel.app/).
 
 ## Contributors
 
