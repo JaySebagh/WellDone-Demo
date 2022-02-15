@@ -70,7 +70,7 @@ export default function Nav() {
         }}>
         <Link href="/">
           <div style={{ margin: '50px 20px' }}>
-            <Image className="avatar" src={'/static/logo.png'} width={200} height={41.75} />
+            <Image className="avatar" src={'/static/LOGO.png'} width={200} height={41.75} />
           </div>
         </Link>
         <div
